@@ -14,3 +14,5 @@ if (get({ hello: 'world' }, '', 'kitty') !== 'kitty') {
 if (get({ hello: 'world' }, 'hello', 'kitty') !== 'world') {
   throw new Error('Функция работает неверно!');
 }
+
+console.log("All OK!!!");
