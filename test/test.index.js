@@ -1,18 +1,8 @@
 import getFunction from '../index.js';
+import { strict as assert } from 'assert';
 
 const get = getFunction();
-
-// BEGIN (write your solution here)
-if (get({ hello: 'world' }, 'hello') !== 'world') {
-  throw new Error('Функция работает неверно!');
-}
-
-if (get({ hello: 'world' }, '', 'kitty') !== 'kitty') {
-  throw new Error('Функция работает неверно!');
-}
-
-if (get({ hello: 'world' }, 'hello', 'kitty') !== 'world') {
-  throw new Error('Функция работает неверно!');
-}
-
+assert.deepStrictEqual(get({ hello: 'world' }, 'hello'), 'world');
+assert.deepStrictEqual(get({ hello: 'world' }, '', 'kitty'), 'kitty');
+assert.deepStrictEqual(get({ hello: 'world' }, 'hello', 'kitty'), 'world');
 console.log("All OK!!!");
